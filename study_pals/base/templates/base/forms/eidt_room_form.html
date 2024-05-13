@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div>
+    <form class="form" method="POST" action="{% url 'edit_room_route'  room.id%}">
+        {% csrf_token %}
+                    
+  
+        <div class="form__group">
+            <label for="room_name">Room Name</label>
+            {{form.name}}
+        </div>
+        <div class="form__group">
+            <label for="room_description">Room Description</label>
+            {{form.description}}
+        </div>
+
+        <div class="form__group">
+
+            {{form.topic}} 
+ 
+</div>
+<div class="form__action">
+    <a class="btn btn--dark" href="/">Cancel</a>
+    <button class="btn btn--main" type="submit">EDIT  Room</button>
+</div>
+
+    </form>
+</div>
+
+
+
+
+{% endblock content %}

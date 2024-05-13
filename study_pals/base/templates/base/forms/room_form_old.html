@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div>
+    <form method="POST" action="{% url 'create_room_route' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" value="Create">
+
+    </form>
+</div>
+
+
+
+
+{% endblock content %}
