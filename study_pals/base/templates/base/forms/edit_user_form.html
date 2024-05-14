@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="layout__body">
-                <form class="form" action="{% url 'edit_user_profile_route'%}" method="POST">
+                <form class="form" action="{% url 'edit_user_profile_route'%}" method="POST" enctype="multipart/form-data">
                     {% csrf_token%}
 
                     {%for field in form%}

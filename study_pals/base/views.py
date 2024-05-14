@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.db.models import Q
-from .models import Room,Topic,Message
-from django.contrib.auth.models import User
+from .models import Room,Topic,Message,User
+# from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -204,7 +204,7 @@ def edit_user(request):
     user=request.user
     form = UserForm(instance=user)
     if request.method=='POST':
-            form = UserForm(request.POST ,instance=user)
+            form = UserForm(request.POST,request.FILES ,instance=user)
             if form.is_valid():
                 form.save()
                 return redirect('user_profile_route',pk=user.id)
