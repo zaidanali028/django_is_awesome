@@ -4,7 +4,8 @@ from  django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    #1. uncomment this, pass
+    #1. uncomment this, mpass
+    # 2. add AUTH_USER_MODEL='app_name.User' to settings.py
     # 2. run make_migrations  
     #3. run  migrate
     # 4. create super user after migration
